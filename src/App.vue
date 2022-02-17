@@ -1,34 +1,23 @@
 <template>
-  <Navigation/>
   <div class="container-fluid">
+    <Navbar/>
     <div class="row">
-      <Sidebar/>
-      <main class="col-md-10">
-        <router-view/>
-      </main>
+      <div class="col col-sm-11 m-auto">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-  import Navigation from './components/Navbar.vue'
-  import Sidebar from './components/Sidebar.vue'
-
-  export default {
-    name: 'App',
-    components: {
-      Sidebar,
-      Navigation
-    }
-  }
-</script>
-
 <style lang="scss">
-  #app {
-    padding: 1rem;
-  }
-
-  footer {
-    background-color: #111;
-  }
+  @import '@/assets/styles/app.scss';
 </style>
+
+<script>
+import Navbar from '@/components/Navbar.vue'
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
