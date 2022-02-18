@@ -4,42 +4,11 @@
             <aside class="sidebar col-lg-2">
                 <h4>Проекты</h4>
                 <form @submit.prevent="sendForm">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="turnkeyWebsite">
-                        <label class="form-check-label" for="turnkeyWebsite">
-                            Сайт под ключ
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="cms">
-                        <label class="form-check-label" for="cms">
-                            Работа с CMS
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="landing">
-                        <label class="form-check-label" for="landing">
-                            Лендинг
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="html">
-                        <label class="form-check-label" for="html">
-                            Верстка
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="programming">
-                        <label class="form-check-label" for="programming">
-                            Программирование
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="bots">
-                        <label class="form-check-label" for="bots">
-                            Разработка ботов
-                        </label>
-                    </div>
+                    <InputCheck 
+                        v-for="post in posts" 
+                        :key="post.id" 
+                        :title="post.title" 
+                        :meta="post.meta" />
                 </form>
             </aside>
         </div>
@@ -47,15 +16,34 @@
 </template>
 
 <script>
+    import InputCheck from '@/components/ItemToFormSidebar.vue'
+    
+    export default {
+        components: {
+            InputCheck
+        },
+        data () {
+            return {
+                posts: [
+                    { id: 1, title: 'Сайт под ключ', meta: 'turnkeyWebsite' },
+                    { id: 2, title: 'Работа с CMS', meta: 'cms' },
+                    { id: 3, title: 'Лендинг', meta: 'landing' },
+                    { id: 4, title: 'Верстка', meta: 'html' },
+                    { id: 5, title: 'Программирование', meta: 'programming' },
+                    { id: 6, title: 'Разработка ботов', meta: 'bots' },
+                ]
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
-
     .sidebar {
         padding: 15px;
-        background: #000;
-        box-shadow: -4px 3px 0px 0px #7b2c2c;
+        background: #fff;
+        box-shadow: -4px 3px 0px 0px #c0c0c0;
         border-radius: 3px;
+        color: #222;
     }
 
     ul {

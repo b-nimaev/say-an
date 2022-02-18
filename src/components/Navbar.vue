@@ -19,7 +19,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Меню</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><router-link class="dropdown-item" to="dashboard">Личный кабинет</router-link></li>
-                        <li><router-link class="dropdown-item" to="login">Вход</router-link></li>
+                        <li><router-link class="dropdown-item" to="auth">Вход</router-link></li>
                     </ul>
                 </li>
             </ul>

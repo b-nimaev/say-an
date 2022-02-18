@@ -12,3 +12,13 @@ body {
     min-height: calc(100vh - 2rem);
     background-image: linear-gradient(90deg, #000, #070042ad);
 }
+
+input, label {
+  cursor: pointer;
+}
+
+.btn {
+  &:focus, &:active {
+    box-shadow: none !important;
+  }
+}
